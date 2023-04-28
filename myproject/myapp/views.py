@@ -1,22 +1,22 @@
-# from django.shortcuts import render
-# from django.http import HttpResponse
-# # Create your views here.
-# from slack_sdk import WebClient
-# from slack_sdk.errors import SlackApiError
-# from slack_bolt import App
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+from slack_sdk import WebClient
+from slack_sdk.errors import SlackApiError
+from slack_bolt import App
 
-# SLACK_APP_TOKEN = "xoxe.xoxp-1-Mi0yLTQ1ODUxODgxMDcwNDYtNDYxNTQ4MjkzODQwMC01MTQ5MTM0MjQ4MDM4LTUxNjg0OTUxNDM4MjUtYmM2MjEyMjc1MzRkMDFiMDFhZTY2YWIzYWRmYWI5NjQzNmQ2M2Y4NmRjN2U0ZDU0MGRjYWQzM2JiY2UxZjc3Ng"
-# SLACK_BOT_TOKEN = ""
-# SLACK_CHANNEL = "#general"
+SLACK_APP_TOKEN = "xoxe.xoxp-1-Mi0yLTQ1ODUxODgxMDcwNDYtNDYxNTQ4MjkzODQwMC01MTQ5MTM0MjQ4MDM4LTUxNjg0OTUxNDM4MjUtYmM2MjEyMjc1MzRkMDFiMDFhZTY2YWIzYWRmYWI5NjQzNmQ2M2Y4NmRjN2U0ZDU0MGRjYWQzM2JiY2UxZjc3Ng"
+SLACK_BOT_TOKEN = ""
+SLACK_CHANNEL = "#general"
 
-# slack_client = WebClient(token=SLACK_BOT_TOKEN)
-# slack_app = App(token=SLACK_APP_TOKEN)
+slack_client = WebClient(token=SLACK_BOT_TOKEN)
+slack_app = App(token=SLACK_APP_TOKEN)
 
-# def send_slack_notification(message):
-#         response = slack_client.chat_postMessage(channel=SLACK_CHANNEL, text='some message')
-#         return HttpResponse(response)
-#     # except SlackApiError as e:
-#     #     print("Error sending message: {}".format(e))
+def send_slack_notification(message):
+        response = slack_client.chat_postMessage(channel=SLACK_CHANNEL, text='some message')
+        return HttpResponse(response)
+    # except SlackApiError as e:
+    #     print("Error sending message: {}".format(e))
 class Send_Mail(APIView):
     def get(self, request):
         # data = self.request.POST.get()
